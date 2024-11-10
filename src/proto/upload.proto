@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "./uploadpb";
+
+package uploadpb;
+
+service UploadService {
+  rpc Upload(UploadRequest) returns (UploadResponse);
+}
+
+message UploadRequest {
+  string target_dir = 1;
+  bytes zip_file = 2;
+}
+
+message UploadResponse {
+  string message = 1;
+}
